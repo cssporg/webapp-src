@@ -9,7 +9,7 @@ Login to sandbox instance
 
 $sudo yum install git -y 
 
-$git clone https://github.com/containerrepos/DevOps.git
+$git clone https://github.com/cssporg/webapp.git
 
 $cd DevOps
 
@@ -17,17 +17,16 @@ $sh sandbox.sh
 
 $source export.sh
 
-# Step 1: Build Base AMI
-https://github.com/containerrepos/base-ami
+# Step 1:Build Custom AMI with Packer
+https://github.com/cssporg/packer
 
-# Step 2: Build Custom AMI with Packer
-https://github.com/containerrepos/custom-ami.git
+
 
 # Step 3: Provisioning infrastructure with Terraform
-https://github.com/containerrepos/infra-manager
+https://github.com/cssporg/terraform
 
 # Step 4: Installing and configuring Web server using Ansible
-https://github.com/containerrepos/infra-bootstrapper
+https://github.com/cssporg/ansible
 
 # Step 5: Result
 http://PUBLICIP:80
