@@ -32,3 +32,8 @@ https://github.com/cssporg/ansible
 
 # Step 5: Result
 http://PUBLICIP:80
+
+
+# Post Lambda functions to Take data backup like rds snapshots
+
+https://github.com/cssporg/dr
