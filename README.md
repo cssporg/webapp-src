@@ -6,11 +6,13 @@ This project is intended to touch and feel containerized Web Application.
 
 $git clone https://github.com/cssporg/terraform.git
 
-$cd infra_manager
+$cd terraform
 
 $vi config.json
 
 "myregion" : ""
+
+mykeypair : ""
 
 myamiid : ""
 
