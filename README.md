@@ -1,14 +1,10 @@
 # Project Title
 This project is intended to touch and feel containerized Web Application. 
 
-# Step 3: Provisioning infrastructure with Terraform
-https://github.com/cssporg/terraform
 
-# source cluster
+# Step 1: Bring up source  cluster
 
-# Step 1: Bring up cluster
-
-$git clone https://github.com/cssporg/infra_manager.git
+$git clone https://github.com/cssporg/terraform.git
 
 $cd infra_manager
 
@@ -25,10 +21,10 @@ $terraform validate -var-file=config.json
 $terraform apply -var-file=config.json
 
 
-# Step 2:  login to lb1 instance 
+# Step 2:  login to lb1 instance, login to rds instance and insert data into student table
 sudo yum instamm mysql -y
-mysql -h mysqldb.cwxnaqnigvhg.us-east-1.rds.amazonaws.com -P 3306 -u cloud -p cloudstones
 
+mysql -h mysqldb.cwxnaqnigvhg.us-east-1.rds.amazonaws.com -P 3306 -u cloud -p cloudstones
 
 CREATE TABLE `student` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -37,7 +33,6 @@ CREATE TABLE `student` (
   `email_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 
 INSERT INTO `student` VALUES (1,'krishna','maram','krishnamaram2@gmail.com');
 
@@ -51,10 +46,7 @@ ssh-add -k .pem
 
 ssh -A centos@publicip
 
-
-
-
-sudo yum install docker -y && sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
+sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
 
 $git clone https://github.com/csporg/webapp.git
 
@@ -67,10 +59,8 @@ $ docker build -t my-haproxy .
 $ docker run -d --name my-running-haproxy -p 80:80 my-haproxy
 
 
-# Step 4 :  login to lb1 instance
-login to app1 instance
-
-sudo yum install docker -y && sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
+# Step 4 :  login to app1 instance
+sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
 
 $git clone https://github.com/csporg/webapp.git
 
@@ -83,14 +73,5 @@ $docker image build -t flask . or $docker image build -t flask --network host .
 $docker run -d --name flask -p 5001:5001 flask
 
 
-
-# Step 4: Installing and configuring Web server using Ansible
-https://github.com/cssporg/ansible
-
-# Step 5: Result
+# Step 5: Take public IP of lb1 instance
 http://PUBLICIP:80
-
-
-# Post Lambda functions to Take data backup like rds snapshots
-
-https://github.com/cssporg/dr
