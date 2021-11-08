@@ -50,6 +50,10 @@ ssh -A centos@publicip
 
 sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
 
+$sh /etc/csp/boot_scripts/play-books.sh
+
+OR
+
 $git clone https://github.com/csporg/webapp.git
 
 $cd webapp/src/haproxy
@@ -63,6 +67,10 @@ $ docker run -d --name my-running-haproxy -p 80:80 my-haproxy
 
 # Step 4 :  login to app1 instance
 sudo systemctl start docker && sudo groupadd docker && sudo usermod -aG docker $USER && sudo chmod 777 /var/run/docker.sock
+
+$sh /etc/csp/boot_scripts/play-books.sh
+
+OR
 
 $git clone https://github.com/csporg/webapp.git
 
